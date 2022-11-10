@@ -8,3 +8,13 @@ int	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
+int ft_strlen(char *str)
+{
+	char *tmp;
+
+	tmp = str;
+	while (str && *str)
+		str++;
+	return (tmp - str);
+}
