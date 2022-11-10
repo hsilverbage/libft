@@ -1,19 +1,19 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 15:45:12 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/09 15:45:17 by hsilverb         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalpha (char c)
+int ft_isalpha (int c)
 {
     if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
         return (1);
-    else
+	else
         return (0);
-}
-int main ()
-{
-    char c;
-
-    c = 'a';
-
-    printf("%d \n", ft_isalpha(c));
-
-    return (0);
 }
