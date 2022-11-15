@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:48:43 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 15:48:44 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/15 17:41:09 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,3 @@ long int	ft_strlcpy(char *dest, char *src, size_t destsize)
 		i++;
 	return(i);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:48:03 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 15:48:05 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:23:11 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/15 17:39:23 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,4 @@ void	*	ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return(b)
-}
-int main()
-{
-	*char = array[];
-
-
-
 }

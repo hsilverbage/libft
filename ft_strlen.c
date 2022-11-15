@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:49:06 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 15:49:07 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/15 17:01:17 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,4 @@ int	ft_strlen(const char *s)
 	while(str[i])
 		i++;
 	return (i);
-}
-
-int ft_strlen(char *str)
-{
-	char *tmp;
-
-	tmp = str;
-	while (str && *str)
-		str++;
-	return (tmp - str);
 }

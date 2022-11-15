@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:48:33 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 15:48:34 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:23:37 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/15 17:41:09 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 

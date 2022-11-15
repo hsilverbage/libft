@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:00:14 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 16:00:16 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:22:41 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/15 16:37:56 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 

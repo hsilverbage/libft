@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:47:27 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/10 15:47:33 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:23:02 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/15 16:37:56 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
