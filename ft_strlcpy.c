@@ -6,19 +6,24 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:48:43 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 17:41:09 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 16:38:14 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-long int	ft_strlcpy(char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-
-	while(src[i] && i < n)
+	while(src[i] && i < destsize)
+	{
+		dest[i] = src[i];
 		i++;
-	return(i);
+	}
+	dest[i] = '\0';
+	return(i + 1);
 }

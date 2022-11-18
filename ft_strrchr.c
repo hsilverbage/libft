@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:52:50 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 16:54:37 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 17:30:54 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 char	*ft_strrchr(char *str, int c)
 {
+	int i;
+
+	i = 0;
 	while(str[i])
+	{
+		if(str[i] == c)
+			return(&str[i]);
 		i++;
-	ft_strrchr(str, c);
+	}
 	return (0);
 }

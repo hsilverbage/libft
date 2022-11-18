@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:15:57 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 17:41:09 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 17:23:18 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char *ft_strnstr(char *haystack, char *needle, size_t len)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if(needle[i] == '\0')
