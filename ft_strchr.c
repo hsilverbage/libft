@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:48:20 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 16:37:56 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/16 17:29:27 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(char *str, int c)
 	int i;
 
 	i = 0;
-
+	c = (char) c;
 	while(str[i])
 	{
 		if(str[i] == c)
@@ -25,16 +25,7 @@ char	*ft_strchr(char *str, int c)
 		else
 			i++;
 	}
-	if(str[i] == '\0')
+	if(str[i] == '\0' && c == '\0')
 		return (&str[i]);
 	return (NULL);
-}
-int	main()
-{
-	char *str = "falutation";
-	int c = '\0';
-
-	printf("%s \n", strrchr(str, c));
-	printf("%s \n", ft_strchr(str, c));
-	return(0);
 }

@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 16:23:37 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/18 15:14:09 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/16 18:24:31 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/18 15:09:09 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-size_t	ft_strlcat(char *dest, char *src, size_t destsize)
+void	*ft_memcpy(void * restrict dest, const void *restrict src, size_t n)
 {
 	unsigned long i;
-	unsigned long j;
+	char * char_dest;
+	char * char_src;
 
-	j = 0;
-	i = strlen(src);
-	while (dest[j] && j < destsize)
-		src[i] = dest[j];
-		j++;
+	char_dest = (char *)dest;
+	char_src = (char *)src;
+	i = 0;
+	while (i < n)
+	{
+		char_dest[i] = char_src[i];
 		i++;
-	dest[j] = '\0';
-	return ((i + j)-2);
-}
-int	main()
-{
-	char *dest;
-	char *str = "hkdsjhf";
-
-	printf("%lu \n", strlcat(dest, str, 3));
-	printf("%lu \n", ft_strlcat(dest, str, 3));
-
-	return (0);
+	}
+	return(dest);
 }

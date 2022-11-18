@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:23:11 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 17:39:23 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/16 17:00:31 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	*	ft_memset(void *b, int c, size_t len)
 {
-	int i;
+	char *str;
+	unsigned long int i;
 
 	i = 0;
+	str = b;
 
 	while(i < len)
 	{
-		b[i] = c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
-	return(b)
+	return(b);
 }
