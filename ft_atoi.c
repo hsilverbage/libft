@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:22:30 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/18 18:32:34 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/19 17:27:24 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int result;
-	int neg;
+	int	i;
+	int	result;
+	int	neg;
 
 	result = 0;
 	i = 0;
@@ -27,7 +27,7 @@ int	ft_atoi(char *str)
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	if (!(str[i] >= '0' && str[i] <= '9'))
-		   return (0);
+		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');

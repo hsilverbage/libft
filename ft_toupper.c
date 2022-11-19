@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:53:27 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/15 16:37:56 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/19 17:38:00 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
-	return(c);
+	return (c);
 }

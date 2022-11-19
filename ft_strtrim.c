@@ -1,30 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 18:37:42 by hsilverb          #+#    #+#             */
+/*   Created: 2022/11/19 16:45:35 by hsilverb          #+#    #+#             */
 /*   Updated: 2022/11/19 17:38:00 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char *ft_strtrim(char const *s1, char const *set);
 {
-	size_t	i;
-	char	*char_dest;
-	char	*char_src;
+	int		i;
+	int		j;
+	int		k;
+	char	*trimed;
 
-	char_dest = (char *) dest;
-	char_src = (char *) src;
 	i = 0;
-	while (char_src[i] && i < len)
+	j = 0;
+	k = 0;
+	while (s1)
 	{
-		char_dest[i] = char_src[i];
-		i++;
+		if (s1[i] != set[j])
+			trimed[k] = s1[i];
+		while (s1[i] = set[j])
+		{
+			if (set[j])
+				i++;
+			i++;
+			j++;
+		}
+
 	}
-	return (dest);
+
+
+}
+int	main()
+{
+	char *s1 = "falut fa va ?";
+	char *set = "fa";
+
+	char *trimed = ft_strtrim(s1, set);
+	printf("%s \n", trimed);
+	return(0);
 }

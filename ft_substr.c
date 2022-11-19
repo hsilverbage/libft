@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 18:37:42 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:38:00 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/11/19 16:10:55 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/11/19 17:45:14 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*char_dest;
-	char	*char_src;
+	unsigned int	i;
+	char			*new_string;
 
-	char_dest = (char *) dest;
-	char_src = (char *) src;
 	i = 0;
-	while (char_src[i] && i < len)
+	new_string = malloc(sizeof (char) * (len + 1));
+	if (new_string == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		char_dest[i] = char_src[i];
+		new_string[i] = s[start];
+		start++;
 		i++;
 	}
-	return (dest);
+	new_string[i] = '\0';
+	return (new_string);
 }
