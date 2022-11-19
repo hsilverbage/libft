@@ -6,13 +6,13 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:45:35 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:38:00 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/19 17:59:19 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set);
+char *ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -25,18 +25,24 @@ char *ft_strtrim(char const *s1, char const *set);
 	while (s1)
 	{
 		if (s1[i] != set[j])
+		{
 			trimed[k] = s1[i];
-		while (s1[i] = set[j])
+			k++;
+			i++;
+		}
+		while (s1[i] == set[j])
 		{
 			if (set[j])
 				i++;
-			i++;
-			j++;
+			else if (set[j] != '\0' && s1[i] != set[j])
+			{
+				trimed[k] = s1[i];
+				k++;
+				i++;
+			}
 		}
-
 	}
-
-
+	return (trimed);
 }
 int	main()
 {
