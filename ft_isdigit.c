@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:22:56 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:33:10 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 18:12:18 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

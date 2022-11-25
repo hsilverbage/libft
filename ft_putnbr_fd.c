@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:09:08 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/21 18:28:20 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/24 15:55:36 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-void ft_putnbr_fd(int n, int fd)
+
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n > 0 && n < 10)
 		ft_putchar_fd(n + 48, fd);
@@ -37,4 +38,3 @@ void ft_putnbr_fd(int n, int fd)
 		write(1, "147483648", 9);
 	}
 }
-

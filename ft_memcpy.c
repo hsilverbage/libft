@@ -6,13 +6,13 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:24:31 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:39:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 16:26:02 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned long	i;
 	char			*char_dest;
