@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:10:55 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/25 15:36:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 18:56:36 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*new_string;
 
 	i = 0;
-	new_string = malloc(sizeof (char) * (len + 1));
+	if (!s)
+		return (NULL);
+	new_string = malloc(sizeof(char) * (len + 1));
 	if (new_string == NULL)
 		return (NULL);
 	while (i < len)
