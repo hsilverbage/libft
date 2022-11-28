@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:05:06 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:39:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 13:43:34 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*cast_s1;
-	char	*cast_s2;
+	size_t			i;
+	unsigned char	*cast_s1;
+	unsigned char	*cast_s2;
 
-	cast_s1 = (char *)s1;
-	cast_s2 = (char *)s2;
+	cast_s1 = (unsigned char *)s1;
+	cast_s2 = (unsigned char *)s2;
 	i = 0;
-	while ((s1 || s2) && i < n)
+	if (n == 0)
+		return (0);
+	while ((s1 || s2) && i + 1 < n)
 	{
 		if (cast_s1[i] == cast_s2[i])
 			i++;

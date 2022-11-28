@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:37:42 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/25 19:28:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 11:30:34 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		char_dest[i] = char_src[i];
 		i++;
 	}
-	return (dest);
+	return (char_dest);
 }
