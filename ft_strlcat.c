@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:23:37 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/28 18:46:38 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 18:19:31 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	size_t	len_src;
 
 	i = 0;
-	len_dest = (size_t) ft_strlen(dest);
-	len_src = (size_t) ft_strlen(src);
-	if (destsize <= (size_t) ft_strlen(dest))
+	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(src);
+	if (destsize <= ft_strlen(dest))
 		return (len_src + destsize);
 	while (src[i] && len_dest < destsize - 1)
 	{

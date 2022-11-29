@@ -6,27 +6,17 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:28:37 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:41:21 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 17:33:13 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	char	*s3;
+	size_t		i;
+	size_t		j;
+	char		*s3;
 
 	i = 0;
 	j = 0;

@@ -6,52 +6,78 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:41:52 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/25 16:21:15 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 15:25:29 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_len_n(int n)
+int	ft_len_n(int n)
 {
-	size_t	len;
+	int	i;
 
-	len = 0;
-	if (n < 0)
+	i = 0;
+	if (n == -2147483648)
+		i = 11;
+	else if (n < 0)
+	{
 		n *= -1;
-	while (n > 1)
+		i++;
+	}
+	if (n == 0)
+		i++;
+	while (n > 0)
 	{
 		n = n / 10;
-		len++;
+		i++;
 	}
-	return (len + 1);
+	i++;
+	return (i);
+}
+
+char	*ft_int_min(char *res)
+{
+	int	i;
+	int	k;
+
+	i = 11;
+	k = 147483648;
+	res[1] = '2';
+	res[i] = '\0';
+	i--;
+	while (k > 0)
+	{
+		res[i] = ((k % 10) + 48);
+		k = k / 10;
+		i--;
+	}
+	return (res);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	i;
+	char	*res;
+	int		i;
+	int		temp;
 
-	i = 0;
-	if (n < 0)
-		i ++;
-	i += ft_len_n(n);
-	str = malloc(sizeof(char) * (i + 1));
-	if (n < 0)
-	{
-		str[0] = '-';
-		n *= -1;
-	}
-	if (str == NULL)
+	i = ft_len_n(n);
+	temp = n;
+	res = malloc(sizeof(char) * (i));
+	if (!res)
 		return (NULL);
-	str[i] = '\0';
+	if (n == -2147483648)
+		res = ft_int_min(res);
+	res[--i] = '\0';
 	i--;
-	while (n > 1)
+	if (n < 0)
+		n *= -1;
+	while (i >= 0 && temp != -2147483648)
 	{
-		str[i] = (n % 10) + 48;
+		res[i] = ((n % 10) + 48);
 		n = n / 10;
 		i--;
 	}
-	str[i] = n + 48;
-	return (str);
+	if (temp < 0)
+		res[0] = '-';
+	return (res);
 }
