@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:41:52 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/29 15:25:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:09:36 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_len_n(int n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (n == -2147483648)

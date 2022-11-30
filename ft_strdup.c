@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:01:26 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/19 17:41:03 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:13:12 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
+	size_t	i;
 	char	*dest;
 
 	i = 0;

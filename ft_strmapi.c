@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:40:49 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/25 17:59:36 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:19:16 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		len;
+	size_t	i;
+	size_t	len;
 	char	*str;
 
 	i = 0;
@@ -28,6 +28,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = (*f)(i, str[i]);
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }

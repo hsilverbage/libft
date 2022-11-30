@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:52:50 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/28 12:01:14 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:15:59 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_strrchr(const char *str, int c)
 	i = ft_strlen(str);
 	c = (char) c;
 	if (str[i] == '\0' && c == '\0')
-		return (&((char *)str)[i]);
+		return ((char *)&str[i]);
 	while (i >= 0)
 	{
 		if (str[i] == c)
-			return (&((char *)str)[i]);
+			return ((char *)&str[i]);
 		i--;
 	}
-	return (0);
+	return (NULL);
 }

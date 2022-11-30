@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:22:30 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/29 18:42:18 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:07:29 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	neg;
+	size_t	i;
+	int		result;
+	int		neg;
 
 	result = 0;
 	i = 0;

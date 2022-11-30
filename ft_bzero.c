@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:10:30 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/25 18:49:57 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 16:08:02 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned long	i;
-	char			*str;
+	size_t	i;
+	char	*str;
 
 	str = (char *) s;
 	i = 0;
