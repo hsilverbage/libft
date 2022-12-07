@@ -4,7 +4,7 @@ NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 LIST_HEADERS = libft.h
-SRCS =			ft_isalnum.c			\
+SRCS =			ft_isalnum.c		\
 				ft_atoi.c			\
 				ft_bzero.c			\
 				ft_calloc.c			\
@@ -37,16 +37,17 @@ SRCS =			ft_isalnum.c			\
 				ft_putnbr_fd.c		\
 				ft_strmapi.c		\
 				ft_itoa.c			\
+				ft_split.c
 
 SRCS_B = 		ft_lstnew_bonus.c			\
 				ft_lstsize_bonus.c			\
 				ft_lstadd_front_bonus.c		\
-				ft_lstadd_back_bonus.c		\
 				ft_lstlast_bonus.c			\
 				ft_lstdelone_bonus.c		\
 				ft_lstclear_bonus.c			\
 				ft_lstiter_bonus.c			\
-				ft_lstmap_bonus.c			\
+				ft_lstadd_back_bonus.c		\
+				ft_lstmap_bonus.c
 
 
 DIR_HEADERS 	= ./
@@ -54,8 +55,9 @@ DIR_OBJS 		= .objs/
 RM				= rm -rf
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:.c=.o))
+OBJS_B = $(addprefix $(DIR_OBJS), $(SRCS_B:.c=.o))
 
-all : $(NAME)
+all : $(NAME) bonus
 
 $(NAME): $(DIR_OBJS) $(OBJS) $(LIST_HEADERS) Makefile
 	$(AR) rcs $(NAME) $(OBJS)
@@ -63,14 +65,15 @@ $(NAME): $(DIR_OBJS) $(OBJS) $(LIST_HEADERS) Makefile
 $(DIR_OBJS):
 	mkdir -p $(DIR_OBJS)
 
-bonus: $(DIR_OBJS) $(OBJS) $(LIST_HEADERS) Makefile
-	$(AR) rcs $(NAME) $(OBJS)
+
+bonus: $(DIR_OBJS) $(OBJS) $(OBJS_B) $(LIST_HEADERS)
+	$(AR) rcs $(NAME) $(OBJS) $(OBJS_B)
 
 $(DIR_OBJS)%.o: %.c $(LIST_HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(DIR_HEADERS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
 	$(RM) $(NAME)

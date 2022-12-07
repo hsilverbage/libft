@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:46:45 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/02 16:39:35 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/12/02 16:53:16 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ char **ft_split(char const *s, char c)
 	i = 0;
 	k = 0;
 	len = ft_strlen(s);
-	if (!s)
-		return(NULL);
 	tab = malloc(sizeof(char*) * (nbr_word + 1));
 	if (!tab)
 		return (NULL);
@@ -96,7 +94,7 @@ char **ft_split(char const *s, char c)
 	}
 	if (k == nbr_word - 1)
 	{
-		tab[k] = ft_strndup(s, i);
+		tab[k] = ft_strndup(s, len+1);
 		tab[k + 1] = NULL;
 	}
 	else
