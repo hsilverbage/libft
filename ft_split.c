@@ -5,26 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 10:46:45 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/02 16:53:16 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/12/08 15:00:23 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/12/08 18:31:00 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static	size_t	ft_count_words(const char *s1, char c)
 {
 	size_t	word_counter;
 	size_t	i;
 
-	word_counter = 1;
+	word_counter = 0;
 	i = 0;
 	while (s1[i])
 	{
-		if (s1[i] == c)
-			word_counter++;
-		i++;
+		while (s1[i] == c && s1[i])
+			i++;
+		while (s1[i] != c && s1[i])
+			i++;
+		word_counter++;
 	}
+	if (s1[i - 1] == c)
+		word_counter--;
 	return(word_counter);
 }
 static	char	*ft_strndup(const char *s1, size_t n)
@@ -57,7 +62,13 @@ char **ft_split(char const *s, char c)
 	nbr_word = ft_count_words(s, c);
 	i = 0;
 	k = 0;
+	j = 0;
 	len = ft_strlen(s);
+	if (!s)
+	{
+		tab = NULL;
+		return (0);
+	}
 	tab = malloc(sizeof(char*) * (nbr_word + 1));
 	if (!tab)
 		return (NULL);
@@ -101,19 +112,17 @@ char **ft_split(char const *s, char c)
 		tab[k] = NULL;
 	return (tab);
 }
-/*
-int	main()
+
+int main()
 {
-	char **tabstr;
-	int i;
+	char	**tab = ft_split("tripouille  42 ", '\0');
+	int		i;
 
 	i = 0;
-	tabstr = ft_split("im gonna one shot split", ' ');
-	while (tabstr[i] != NULL)
+	while (tab[i] != NULL)
 	{
-		printf("%s \n", (tabstr[i]));
+		printf("%s \n", (tab[i]));
 		i++;
 	}
 	return(0);
 }
-*/
