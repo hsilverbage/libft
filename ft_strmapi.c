@@ -6,7 +6,7 @@
 /*   By: henrik <henrik@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:40:49 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/01 20:11:43 by henrik           ###   ########lyon.fr   */
+/*   Updated: 2022/12/13 12:20:45 by henrik           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	len = ft_strlen(s);
 	if (!s)
-		return(NULL);
+		return (NULL);
 	str = malloc(sizeof(char) * (len +1));
 	if (!str)
 		return (NULL);
