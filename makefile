@@ -37,8 +37,8 @@ SRCS =			ft_isalnum.c		\
 				ft_putnbr_fd.c		\
 				ft_strmapi.c		\
 				ft_itoa.c			\
-				ft_split.c
-
+				ft_split.c			\
+				ft_striteri.c
 SRCS_B = 		ft_lstnew_bonus.c			\
 				ft_lstsize_bonus.c			\
 				ft_lstadd_front_bonus.c		\

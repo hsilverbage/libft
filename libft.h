@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:52:03 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/08 15:10:37 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/12/13 01:30:58 by henrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 //void	ft_lstadd_back(t_list **lst, t_list *new);
 
 char	*ft_strchr(const char *str, int c);

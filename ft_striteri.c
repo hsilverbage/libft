@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrik <henrik@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: henrik <hsilverb@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 17:40:49 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/01 20:11:43 by henrik           ###   ########lyon.fr   */
+/*   Created: 2022/12/13 01:26:42 by henrik            #+#    #+#             */
+/*   Updated: 2022/12/13 01:36:22 by henrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
-	size_t	len;
-	char	*str;
 
 	i = 0;
-	len = ft_strlen(s);
 	if (!s)
-		return(NULL);
-	str = malloc(sizeof(char) * (len +1));
-	if (!str)
-		return (NULL);
-	while (len--)
+		return ;
+	while (s[i])
 	{
-		str[i] = (f(i, s[i]));
+		f(i, &s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
 }
