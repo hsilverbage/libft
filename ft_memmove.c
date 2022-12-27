@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:37:42 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/30 13:08:49 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/12/27 11:03:33 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 
 	char_dest = (unsigned char *) dest;
 	char_src = (unsigned char *) src;
+	if (!dest && !src)
+		return (0);
 	if (char_src < char_dest)
 	{
 		while (len--)

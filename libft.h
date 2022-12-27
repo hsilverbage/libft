@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:52:03 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/13 01:30:58 by henrik           ###   ########.fr       */
+/*   Updated: 2022/12/27 11:07:00 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -46,7 +46,10 @@ void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-//void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 char	*ft_strchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -65,5 +68,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

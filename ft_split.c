@@ -5,43 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 15:00:23 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/08 18:31:00 by hsilverb         ###   ########lyon.fr   */
+/*   Created: 2022/12/27 12:25:07 by hsilverb          #+#    #+#             */
+/*   Updated: 2022/12/27 17:58:42 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include "libft.h"
 
-static	size_t	ft_count_words(const char *s1, char c)
+static size_t	ft_count_word(char const *s, char c)
 {
-	size_t	word_counter;
 	size_t	i;
+	size_t	counter;
 
-	word_counter = 0;
 	i = 0;
-	while (s1[i])
+	counter = 0;
+	while (s[i])
 	{
-		while (s1[i] == c && s1[i])
+		while (s[i] == c)
 			i++;
-		while (s1[i] != c && s1[i])
-			i++;
-		word_counter++;
+		if (s[i])
+		{
+			while (s[i] != c && s[i])
+				i++;
+			counter++;
+		}
 	}
-	if (s1[i - 1] == c)
-		word_counter--;
-	return(word_counter);
+	return (counter);
 }
+
+static char	**ft_free_all(char **tab, size_t n)
+{
+	while (n >= 0)
+	{
+		free(tab[n]);
+		n--;
+	}
+	return (tab);
+}
+
 static	char	*ft_strndup(const char *s1, size_t n)
 {
 	size_t	j;
 	char	*dest;
 
 	dest = malloc(sizeof(char) * (n + 1));
-	if (dest == NULL)
+	if (!dest)
 		return (NULL);
 	j = 0;
-	while (s1[j] && j < n)
+	while (j < n && s1[j])
 	{
 		dest[j] = s1[j];
 		j++;
@@ -50,79 +62,42 @@ static	char	*ft_strndup(const char *s1, size_t n)
 	return (dest);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split_str(char const *s, char c, size_t word_counter, char **tab)
 {
+	size_t	i_tab;
 	size_t	i;
-	size_t	k;
-	size_t	nbr_word;
-	size_t	len;
-	char	**tab;
-	size_t	j;
 
-	nbr_word = ft_count_words(s, c);
+	i_tab = 0;
 	i = 0;
-	k = 0;
-	j = 0;
-	len = ft_strlen(s);
-	if (!s)
+	while (i_tab < word_counter)
 	{
-		tab = NULL;
-		return (0);
-	}
-	tab = malloc(sizeof(char*) * (nbr_word + 1));
-	if (!tab)
-		return (NULL);
-	while (s[i] == c)
-		s++;
-	while (s[i] && k < nbr_word)
-	{
-		while (s[i] != c  && s[i])
-			i++;
-		if (s[i] == c)
-		{
-			while (s[i+1] == c)
-			{
-				i++;
-				j++;
-				if (s[i] == '\0' && k == 0)
-				{
-					tab[k] = NULL;
-					return (tab);
-				}
-			}
-			tab[k] = ft_strndup(s, (i - j));
-			while (i > 0 && len != 0)
-			{
-				s++;
-				i--;
-				len --;
-			}
+		while (s[i] == c)
 			s++;
-			k++;
-			len --;
-			j = 0;
+		while (s[i] && s[i] != c)
+		{
+			while (s[i] != c && s[i])
+				i++;
+			tab[i_tab] = ft_strndup(s, i);
+			if (!tab[i_tab])
+				return (ft_free_all(tab, i_tab));
+			s += i;
+			i = 0;
 		}
+		i_tab++;
 	}
-	if (k == nbr_word - 1)
-	{
-		tab[k] = ft_strndup(s, len+1);
-		tab[k + 1] = NULL;
-	}
-	else
-		tab[k] = NULL;
+	tab[i_tab] = NULL;
 	return (tab);
 }
 
-int main()
+char	**ft_split(char const *s, char c)
 {
-	char	**tab = ft_split("tripouille  42 ", '\0');
-	int		i;
+	char	**tab;
+	size_t	word_counter;
 
-	i = 0;
-	while (tab[i] != NULL)
-	{
-		printf("%s \n", (tab[i]));
-		i++;
-	}
-	return(0);
+	word_counter = ft_count_word(s, c);
+	tab = malloc(sizeof(char *) * (word_counter + 1));
+	if (!tab)
+		return (NULL);
+	tab = ft_split_str(s, c, word_counter, tab);
+	return (tab);
 }
