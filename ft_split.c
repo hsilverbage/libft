@@ -6,11 +6,10 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:25:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/27 17:58:42 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2022/12/27 18:26:07 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static size_t	ft_count_word(char const *s, char c)
