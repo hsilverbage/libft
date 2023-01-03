@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_with_substr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:25:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/01/03 19:06:24 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/03 19:05:35 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,6 @@ static char	**ft_free_all(char **tab, size_t n)
 	return (NULL);
 }
 
-static	char	*ft_strndup(const char *s, size_t n)
-{
-	size_t	j;
-	char	*dest;
-
-	dest = NULL;
-	if (!s)
-		return (NULL);
-	dest = malloc(sizeof(char) * (n + 1));
-	if (!dest)
-		return (NULL);
-	j = 0;
-	while (j < n && s[j])
-	{
-		dest[j] = s[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return (dest);
-}
-
 char	**ft_split_str(char const *s, char c, size_t word_counter, char **tab)
 {
 	size_t	i_tab;
@@ -82,7 +61,7 @@ char	**ft_split_str(char const *s, char c, size_t word_counter, char **tab)
 		{
 			while (s[i] != c && s[i])
 				i++;
-			tab[i_tab] = ft_strndup(s, i);
+			tab[i_tab] = ft_substr(s, 0, i);
 			if (!tab[i_tab] && i_tab > 0)
 				return (ft_free_all(tab, i_tab));
 			else if (!tab[i_tab])
@@ -107,4 +86,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	tab = ft_split_str(s, c, word_counter, tab);
 	return (tab);
+}
+int	main ()
+{
+	char **tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	int i = 0;
+	while (tab[i])
+		printf("%s \n", tab[i++]);
+
+	return (0);
 }
