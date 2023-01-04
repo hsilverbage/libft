@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_with_substr.c                             :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:25:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/01/03 19:05:35 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 22:39:58 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ static size_t	ft_count_word(char const *s, char c)
 
 static char	**ft_free_all(char **tab, size_t n)
 {
-	while (n >= 0)
+	while (n > 0)
 	{
-		free(tab[n]);
 		n--;
+		free(tab[n]);
 	}
 	free(tab);
 	return (NULL);
@@ -55,7 +55,7 @@ char	**ft_split_str(char const *s, char c, size_t word_counter, char **tab)
 	i = 0;
 	while (i_tab < word_counter)
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			s++;
 		if (s[i] && s[i] != c)
 		{
@@ -80,19 +80,12 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	size_t	word_counter;
 
+	if (!s)
+		return (NULL);
 	word_counter = ft_count_word(s, c);
 	tab = malloc(sizeof(char *) * (word_counter + 1));
 	if (!tab)
 		return (NULL);
 	tab = ft_split_str(s, c, word_counter, tab);
 	return (tab);
-}
-int	main ()
-{
-	char **tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-	int i = 0;
-	while (tab[i])
-		printf("%s \n", tab[i++]);
-
-	return (0);
 }

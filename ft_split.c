@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:25:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/01/03 19:06:24 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 22:41:51 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ static size_t	ft_count_word(char const *s, char c)
 
 static char	**ft_free_all(char **tab, size_t n)
 {
-	while (n >= 0)
+	while (n > 0)
 	{
 		free(tab[n]);
 		n--;
 	}
+	free(tab[0]);
 	free(tab);
 	return (NULL);
 }
@@ -56,7 +57,7 @@ static	char	*ft_strndup(const char *s, size_t n)
 		return (NULL);
 	dest = malloc(sizeof(char) * (n + 1));
 	if (!dest)
-		return (NULL);
+		return (free(dest), NULL);
 	j = 0;
 	while (j < n && s[j])
 	{
