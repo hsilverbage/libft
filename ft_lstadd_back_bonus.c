@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:52:36 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/27 10:34:10 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/05 18:55:20 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list	*temp;
 
 	if (lst)
 	{
 		if (*lst)
 		{
-			last = ft_lstlast(*lst);
-			last->next = new;
+			temp = ft_lstlast(*lst);
+			temp->next = new;
 		}
 		else
 			*lst = new;

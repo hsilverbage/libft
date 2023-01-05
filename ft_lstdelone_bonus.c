@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:52:48 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/12/27 10:53:20 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/05 18:51:46 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!del)
-		return ;
-	if (lst)
+	if (lst && del)
 	{
-		(*del)(lst->content);
+		del(lst->content);
 		free(lst);
 	}
 }
