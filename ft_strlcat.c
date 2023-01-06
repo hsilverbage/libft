@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:23:37 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/30 16:06:57 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 19:29:16 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	i = 0;
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
+	if ((!src || !dest) && !destsize)
+		return (0);
 	if (destsize == 0)
 		return (len_src);
 	if (len_dest + 1 > destsize)

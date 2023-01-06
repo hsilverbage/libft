@@ -6,7 +6,7 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:23:02 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/01/05 17:52:57 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 19:07:57 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*s1;
 
 	i = 0;
+	if (count == 0 || size == 0)
+		return (malloc(0));
+	if ((SIZE_MAX / count) < size)
+		return (NULL);
 	s1 = malloc(count * size);
 	if (!s1)
 		return (NULL);

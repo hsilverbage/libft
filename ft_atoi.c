@@ -6,17 +6,24 @@
 /*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:22:30 by hsilverb          #+#    #+#             */
-/*   Updated: 2022/11/30 16:07:29 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 19:13:21 by hsilverb         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_overflow(int neg)
+{
+	if (neg < 0)
+		return (0);
+	return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
-	size_t	i;
-	int		result;
-	int		neg;
+	size_t		i;
+	long int	result;
+	int			neg;
 
 	result = 0;
 	i = 0;
@@ -32,6 +39,8 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
+		if (result != ((result * 10 + (str[i] - '0')) / 10))
+			return (ft_overflow(neg));
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
